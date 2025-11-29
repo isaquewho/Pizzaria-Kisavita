@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             // Senha fixa simples
             if (document.getElementById('usuario').value === 'admin' && 
-                document.getElementById('senha').value === '1234') {
+                document.getElementById('senha').value === 'kisavita2025') {
                 localStorage.setItem('admin_logado', 'true');
                 window.location.href = 'admin.html';
             } else {
