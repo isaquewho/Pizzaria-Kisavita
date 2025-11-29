@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Casa de KisaVita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+                Casa de KisaVita
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cardapio.html" class="active">Cardápio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="section-title-wrapper">
+            <h2>Nosso Cardápio</h2>
+            <p>Escolha seus pratos favoritos e adicione ao carrinho.</p>
+        </section>
+
+        <div id="filtrosContainer" class="filtros-wrapper">
+            </div>
+
+        <div id="menuContainer" class="container">
+            </div>
+    </main>
+
+    <div class="cart-float-btn" onclick="abrirCarrinho()">
+        🛒 <span id="contadorCarrinho">0</span>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlayCarrinho">
+        <div class="modal">
+            <h2>Seu Pedido</h2>
+            <div id="listaCarrinho" class="carrinho-lista">
+                </div>
+            <div class="carrinho-footer">
+                <h3 id="totalCarrinho" style="text-align: right; margin: 10px 0;">Total: R$ 0.00</h3>
+                <div class="modal-actions">
+                    <button class="btn-outline" onclick="fecharCarrinho()">Voltar</button>
+                    <button class="btn-primary" onclick="finalizarPedido()">Concluir Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

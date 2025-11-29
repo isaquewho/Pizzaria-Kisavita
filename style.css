@@ -1,0 +1,1004 @@
+/* Variáveis de Cores e Fontes */
+:root {
+    --primary-color: #A0522D; /* Marrom para elegância */
+    --secondary-color: #F5DEB3; /* Bege claro */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #FDF9F6; /* Off-white */
+    --bg-dark: #2c3e50;
+    --accent-color: #E6B033; /* Dourado suave para destaque */
+    --border-color: #e0e0e0;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --shadow-light: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; text-align: center; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.7rem; }
+
+/* Botões */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #8B4513; /* Um tom mais escuro */
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+
+/* --- Header --- */
+.main-header {
+    background-color: white;
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px; /* Limite para não ficar muito largo */
+    margin: 0 auto;
+}
+
+/* --- Ajustes para o Logo Combinado (Imagem + Texto) --- */
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    
+    /* Regras Adicionadas/Modificadas */
+    display: flex;             /* Coloca a imagem e o texto lado a lado */
+    align-items: center;       /* Centraliza verticalmente (no meio) */
+    gap: 10px;                 /* Espaço de 10px entre a imagem e o texto */
+}
+
+.logo-img {
+    height: 40px; /* Altura da imagem, ajuste conforme a sua logo */
+    width: auto;
+    /* Remover 'display: block;' se estava aqui, pois 'display: flex' já cuida disso */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section (Home) --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Espaço reservado para a imagem de fundo - herda do pai */
+.hero-image-placeholder {
+    display: none; /* A imagem de fundo é no .hero-section */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* --- About Section (Home) --- */
+.about-section {
+    padding: 60px 0;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-section .container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.about-image-placeholder {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+.about-image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Menu Preview Section (Home) --- */
+.menu-preview-section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+}
+
+.menu-preview-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-item-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.item-image-placeholder {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.item-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-item-card h3 {
+    margin: 20px 15px 10px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.menu-item-card p {
+    padding: 0 15px 20px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Garante que o footer fique no final da página */
+}
+
+/* --- Layout de Página Geral (para Pedidos e Contato) --- */
+.page-content {
+    flex-grow: 1; /* Permite que o conteúdo cresça */
+    padding: 40px 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title-wrapper h2 {
+    margin: 0;
+}
+
+/* ==========================================================================
+   NOVO ESTILO DO CARDÁPIO (LISTA HORIZONTAL)
+   ========================================================================== */
+
+/* Grid de 2 colunas para ficar igual à referência */
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* Cards mais largos */
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: white;
+    border-radius: 12px; /* Bordas arredondadas suaves */
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* Mágica para deixar horizontal */
+    display: flex; 
+    flex-direction: row-reverse; /* Inverte: Texto na Esquerda, Foto na Direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+    gap: 20px;
+    border: 1px solid #f0f0f0;
+}
+
+.produto-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--secondary-color);
+}
+
+/* Configuração da Imagem (Quadrada e na Direita) */
+.produto-imagem-placeholder {
+    width: 140px;  /* Tamanho fixo quadrado */
+    height: 140px;
+    flex-shrink: 0; /* Garante que a imagem não "amasse" */
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.produto-imagem-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Corta a imagem perfeitamente para preencher o quadrado */
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover .produto-imagem-placeholder img {
+    transform: scale(1.05); /* Zoom suave ao passar o mouse */
+}
+
+/* Configuração do Texto (Na Esquerda) */
+.produto-info {
+    flex: 1; /* Ocupa todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0; /* Remove padding interno antigo */
+    text-align: left; /* Alinha texto à esquerda */
+}
+
+.produto-info h3 {
+    font-family: var(--font-body); /* Fonte mais limpa para o nome */
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase; /* Letras maiúsculas igual referência */
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.produto-info p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    
+    /* Limita a descrição a 2 linhas para não quebrar o layout */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.produto-preco {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Botão menor e mais elegante */
+.produto-actions button {
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: auto; /* Botão ocupa só o espaço necessário */
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    .cardapio-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+
+    .produto-card {
+        flex-direction: column; /* Volta a ficar um em cima do outro no celular */
+        text-align: center;
+    }
+    
+    .produto-imagem-placeholder {
+        width: 100%; /* Imagem grande no celular */
+        height: 200px;
+    }
+
+    .produto-info {
+        text-align: center;
+    }
+    
+    .produto-actions button {
+        width: 100%;
+    }
+}
+.produto-actions .btn-outline {
+    flex-grow: 1;
+    text-align: center;
+    padding: 8px 15px;
+}
+
+/* ==========================================================================
+   CORREÇÃO DO MODAL (BARRA DE ROLAGEM)
+   ========================================================================== */
+
+   .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    /* Centralização com Flexbox (Melhor para telas pequenas) */
+    display: none; /* O JS muda para flex quando ativa */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Garante um espaço nas bordas em celulares */
+}
+
+/* Quando ativo, vira Flex */
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    
+    /* --- A MÁGICA ACONTECE AQUI --- */
+    max-height: 90vh; /* Define que o modal só pode ter 90% da altura da tela */
+    overflow-y: auto; /* Cria barra de rolagem SE o conteúdo for maior */
+    position: relative; /* Garante que fique no fluxo certo */
+    transform: none; /* Remove transforms antigos que atrapalham o scroll */
+}
+
+/* Estilizando a barra de rolagem para ficar bonitinha (Opcional) */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+.modal::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+.modal::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+}
+.modal::-webkit-scrollbar-thumb:hover {
+    background: #bbb; 
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+}
+
+.input-field[type="number"] {
+    -moz-appearance: textfield; /* Para Firefox */
+}
+.input-field::-webkit-inner-spin-button, 
+.input-field::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Para Chrome/Safari */
+    margin: 0;
+}
+
+textarea.input-field {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* --- Contato (contato.html) --- */
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--text-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-info, .contact-form-wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.contact-info h3, .contact-form-wrapper h3 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.7rem;
+}
+
+.contact-info p {
+    text-align: left;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 20px;
+}
+.contact-info ul li {
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Responsividade (CONTINUAÇÃO) --- */
+@media (max-width: 768px) {
+    /* Layout Geral */
+    .container {
+        padding: 10px;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+
+    /* Header e Navegação */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+        gap: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 5px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 10px;
+    }
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: 45vh;
+        padding: 0 15px;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image-placeholder {
+        order: -1; /* Coloca a imagem no topo */
+        margin-bottom: 20px;
+    }
+
+    /* Menu Preview Section */
+    .menu-items-grid {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    /* Pedidos/CRUD */
+    .section-title-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .produto-actions {
+        flex-direction: column;
+    }
+
+    /* Contato */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .map-placeholder {
+        height: 250px;
+    }
+}
+
+/* Estilo para a imagem do logo no cabeçalho */
+.logo-img {
+    height: 40px; /* Ajuste a altura conforme desejar */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços extras indesejados abaixo da imagem */
+}
+
+/* Opcional: Se a imagem do logo já for grande, podemos querer remover o estilo do texto */
+.navbar .logo {
+    /* Pode remover a altura e fonte se a imagem já for o suficiente */
+    /* font-family: unset;
+    font-size: unset;
+    font-weight: unset; */
+}
+
+/* Botão Flutuante do Carrinho */
+.cart-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.2s;
+}
+.cart-float-btn:hover { transform: scale(1.1); }
+
+#contadorCarrinho {
+    position: absolute;
+    top: -5px; right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Estilo da Lista do Carrinho */
+.carrinho-lista {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.carrinho-item button {
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+/* --- NOTIFICAÇÃO TOAST (Substituto do Alert) --- */
+#toast {
+    visibility: hidden; /* Escondido por padrão */
+    min-width: 250px;
+    background-color: var(--primary-color); /* Usa a cor marrom do seu site */
+    color: #fff; /* Texto branco */
+    text-align: center;
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 16px;
+    position: fixed;
+    z-index: 9999; /* Fica acima de tudo */
+    left: 50%;
+    bottom: 30px; /* Posição inicial */
+    transform: translateX(-50%); /* Centraliza na tela */
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s; /* Animação suave */
+}
+
+/* Classe que ativamos via Javascript para mostrar */
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Sobe um pouquinho para dar efeito de movimento */
+}
+
+/* Títulos das Categorias no Cardápio */
+.categoria-titulo {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 50px; /* Espaço antes do título */
+    margin-bottom: 20px; /* Espaço depois do título */
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color); /* Linha elegante embaixo */
+    text-align: left; /* Alinhado a esquerda */
+}
+
+/* Ajuste para o primeiro título não ficar tão longe */
+#menuContainer .categoria-titulo:first-child {
+    margin-top: 10px;
+}
+
+/* --- FILTROS DO CARDÁPIO --- */
+.filtros-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra linha se não couber */
+    gap: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px; /* Borda bem redonda */
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Estilo do botão quando está SELECIONADO */
+.btn-filtro.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- FILTROS DO CARDÁPIO --- */
+.filtros-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra linha se não couber */
+    gap: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px; /* Borda bem redonda */
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Estilo do botão quando está SELECIONADO */
+.btn-filtro.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ==========================================================================
+   ESTILO DO UPLOAD DE IMAGEM (ADMIN)
+   ========================================================================== */
+
+/* Ajuste do campo de input de arquivo */
+input[type="file"].input-field {
+    background-color: white;
+    padding: 10px;
+    height: auto; /* Permite que o campo cresça se necessário */
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Área de Pré-visualização (O quadrado tracejado) */
+#previewImagem {
+    margin-top: 15px;
+    width: 100%; /* Ocupa toda a largura do modal */
+    height: 200px; /* Altura padrão */
+    border: 2px dashed #ccc; /* Borda tracejada estilo "arraste aqui" */
+    border-radius: 8px;
+    background-color: #f8f9fa; /* Fundo cinza bem clarinho */
+    
+    /* Centraliza a imagem ou o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden; /* Corta o que passar da borda */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+#previewImagem:hover {
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+/* A imagem dentro do preview */
+#previewImagem img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem apareça inteira sem distorcer */
+    display: block;
+}
+
+/* Texto "Nenhuma imagem selecionada" */
+#previewImagem span {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 480px) {
+    /* No celular, diminuímos a altura para caber na tela */
+    #previewImagem {
+        height: 150px;
+    }
+    
+    /* Ajusta o tamanho da fonte do input para não quebrar */
+    input[type="file"].input-field {
+        font-size: 0.8rem;
+    }
+}
+
+/* --- CORREÇÃO DO VISUAL DO MODAL --- */
+
+.modal {
+    background-color: white;
+    
+    /* LARGURA: Aqui está o segredo para não ficar "espremido" */
+    width: 90%;          /* Ocupa quase a tela toda no celular */
+    max-width: 700px;    /* No computador, trava em 700px (bem mais largo) */
+    
+    /* ESPAÇAMENTO: Para dar "ar" ao formulário */
+    padding: 30px;       
+    
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    /* Barra de rolagem (Mantendo o que já fizemos) */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: none;
+}
+
+/* Melhorar os campos para acompanharem o tamanho novo */
+.input-field {
+    width: 100%;
+    padding: 12px 15px; /* Um pouco mais de espaço interno no campo */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fafafa; /* Fundo levemente cinza fica mais moderno */
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+    outline: none;
+}

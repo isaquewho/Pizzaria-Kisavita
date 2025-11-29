@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de KisaVita - Contato</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Logo Casa de KisaVita" class="logo-img">
+                Casa de KisaVita
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="contact-section container">
+            <h2>Fale Conosco</h2>
+            <p>Seja para fazer uma reserva, tirar dúvidas ou nos dar sugestões, estamos sempre à disposição para atendê-lo(a).</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Nossos Dados</h3>
+                    <p><strong>Endereço:</strong> Rua Sabor Divino, 123 - Centro, Cidade Saborosa - CS</p>
+                    <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+                    <p><strong>E-mail:</strong> contato@kisavita.com.br</p>
+                    <p><strong>Horário de Funcionamento:</strong></p>
+                    <ul>
+                        <li>Terça a Sexta: 18:00 - 23:00</li>
+                        <li>Sábado e Domingo: 12:00 - 15:00 | 18:00 - 23:30</li>
+                        <li>Segunda-feira: Fechado</li>
+                    </ul>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h3>Envie sua Mensagem</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="nomeContato">Seu Nome</label>
+                            <input type="text" id="nomeContato" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailContato">Seu E-mail</label>
+                            <input type="email" id="emailContato" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assuntoContato">Assunto</label>
+                            <input type="text" id="assuntoContato" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagemContato">Mensagem</label>
+                            <textarea id="mensagemContato" class="input-field" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15349.522204558296!2d-48.29124407886918!3d-15.864604246944645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a31a986e6819b%3A0xc3f124c1e4c70d30!2sRestaurante%20Casa%20do%20Sabor!5e0!3m2!1spt-BR!2sbr!4v1701389025078!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Casa de KisaVita. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
