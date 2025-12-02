@@ -87,6 +87,52 @@
             <a href="login.html" style="color: #666; text-decoration: none; border-bottom: 1px dotted #999;">Área Administrativa</a>
         </p>
     </footer>
+    <!-- === MODAL DE CHECKOUT (DADOS DO CLIENTE) === -->
+<div class="modal-overlay" id="modalCheckout">
+    <div class="modal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Finalizar Pedido</h2>
+            <button class="close-btn" onclick="fecharCheckout()">&times;</button>
+        </div>
+        
+        <div class="checkout-form">
+            <div class="form-group">
+                <label>Seu Nome:</label>
+                <input type="text" id="cliNome" class="input-field" placeholder="Ex: João Silva">
+            </div>
+
+            <div class="form-group">
+                <label>Telefone (WhatsApp):</label>
+                <input type="tel" id="cliTelefone" class="input-field" placeholder="(XX) 99999-9999">
+            </div>
+
+            <div class="form-group">
+                <label>Endereço de Entrega:</label>
+                <textarea id="cliEndereco" class="input-field" rows="3" placeholder="Rua, Número, Bairro e Complemento"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Forma de Pagamento:</label>
+                <select id="cliPagamento" class="input-field">
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito (Maquininha)</option>
+                    <option value="Cartão de Débito">Cartão de Débito (Maquininha)</option>
+                    <option value="Dinheiro">Dinheiro (Precisa de troco?)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Troco para (se for dinheiro):</label>
+                <input type="text" id="cliTroco" class="input-field" placeholder="R$ 0,00">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="fecharCheckout()">Cancelar</button>
+                <button class="btn-primary" onclick="enviarPedidoWhatsApp()">CONFIRMAR E PEDIR 🍕</button>
+            </div>
+        </div>
+    </div>
+    </div>
     <script type="module" src="script.js"></script>
 </body>
 </html>

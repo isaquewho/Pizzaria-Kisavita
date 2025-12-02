@@ -413,3 +413,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// 1. MUDANÇA: O botão "Finalizar" do carrinho agora só abre a janela de dados
+window.finalizarPedido = () => {
+    let carrinho = getCarrinho();
+    if (carrinho.length === 0) return showToast('Carrinho vazio!');
+    
+    // Fecha o carrinho e abre o checkout
+    fecharCarrinho();
+    document.getElementById('modalCheckout').classList.add('active');
+};
+
+// 2. NOVA FUNÇÃO: Fecha a janela de checkout
+window.fecharCheckout = () => {
+    document.getElementById('modalCheckout').classList.remove('active');
+};
+
+// 3. NOVA FUNÇÃO: Pega os dados e manda pro Zap
+window.enviarPedidoWhatsApp = () => {
+    // Pega os dados dos campos
+    const nome = document.getElementById('cliNome').value;
+    const telefone = document.getElementById('cliTelefone').value;
+    const endereco = document.getElementById('cliEndereco').value;
+    const pagamento = document.getElementById('cliPagamento').value;
+    const troco = document.getElementById('cliTroco').value;
+
+    // Validação simples
+    if (!nome || !endereco) {
+        alert("Por favor, preencha seu Nome e Endereço.");
+        return;
+    }
+
+    // Monta o carrinho
+    let carrinho = getCarrinho();
+    const numeroPizzaria = "5511999999999"; // <--- SEU NÚMERO AQUI
+    
+    let msg = `🍕 *NOVO PEDIDO - CASA DE KISAVITA* 🍕\n\n`;
+    msg += `👤 *Cliente:* ${nome}\n`;
+    msg += `📞 *Telefone:* ${telefone}\n`;
+    msg += `📍 *Endereço:* ${endereco}\n\n`;
+    msg += `--------------------------------\n`;
+    msg += `*PEDIDO:*\n`;
+
+    let total = 0;
+    carrinho.forEach(item => {
+        let subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        msg += `▪️ ${item.quantidade}x ${item.nome} - R$ ${subtotal.toFixed(2)}\n`;
+    });
+
+    msg += `--------------------------------\n`;
+    msg += `💰 *TOTAL: R$ ${total.toFixed(2)}*\n`;
+    msg += `💳 *Pagamento:* ${pagamento}\n`;
+    
+    if(pagamento === "Dinheiro" && troco) {
+        msg += `💵 *Troco para:* ${troco}\n`;
+    }
+
+    // Envia
+    const url = `https://wa.me/${numeroPizzaria}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+
+    // Limpa tudo
+    setCarrinho([]);
+    fecharCheckout();
+    updateContador();
+};
