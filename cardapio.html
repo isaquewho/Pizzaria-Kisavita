@@ -28,27 +28,27 @@
             <p>Escolha seus pratos favoritos e adicione ao carrinho.</p>
         </section>
 
-        <div id="filtrosContainer" class="filtros-wrapper">
-            </div>
-
-        <div id="menuContainer" class="container">
-            </div>
+        <div id="menuContainer" class="container"></div>
     </main>
 
+    <!-- Botão Flutuante -->
     <div class="cart-float-btn" onclick="abrirCarrinho()">
         🛒 <span id="contadorCarrinho">0</span>
     </div>
 
+    <!-- MODAL CARRINHO (O botão mudou aqui) -->
     <div class="modal-overlay" id="modalOverlayCarrinho">
         <div class="modal">
             <h2>Seu Pedido</h2>
-            <div id="listaCarrinho" class="carrinho-lista">
-                </div>
+            <div id="listaCarrinho" class="carrinho-lista"></div>
+            
             <div class="carrinho-footer">
                 <h3 id="totalCarrinho" style="text-align: right; margin: 10px 0;">Total: R$ 0.00</h3>
                 <div class="modal-actions">
                     <button class="btn-outline" onclick="fecharCarrinho()">Voltar</button>
-                    <button class="btn-primary" onclick="finalizarPedido()">Concluir Pedido</button>
+                    
+                    <!-- AQUI ESTÁ A MUDANÇA: Chama a função simples -->
+                    <button class="btn-primary" onclick="finalizarPedidoSimples()">Finalizar Pedido</button>
                 </div>
             </div>
         </div>
