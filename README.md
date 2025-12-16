@@ -8,7 +8,7 @@ Pizzarias locais perdem vendas devido à demora no atendimento telefônico e err
 
 🚀 A Solução
 
-Uma Web App (SPA) que permite ao cliente montar seu pedido visualmente e envia uma comanda estruturada para o WhatsApp do estabelecimento. Inclui um painel administrativo para gestão do cardápio sem necessidade de edição de código.
+Uma Web App (SPA) que permite ao cliente montar seu pedido visualmente e envia. Inclui um painel administrativo para gestão do cardápio sem necessidade de edição de código.
 
 ✨ Funcionalidades Principais
 
@@ -16,11 +16,7 @@ Para o Cliente (Front-end)
 
 Cardápio Digital: Interface visual intuitiva com fotos e descrições.
 
-Carrinho Inteligente: Adição, remoção e ajuste de quantidade de itens.
-
-Checkout Simplificado: Captura de dados essenciais (Nome, Endereço, Pagamento).
-
-Integração WhatsApp API: Gera link automático com o pedido formatado.
+Carrinho Inteligente: Adição, remoção e ajuste de quantidade de itens
 
 Feedback Visual: Notificações (Toasts) para cada ação do usuário.
 
@@ -50,10 +46,10 @@ Hospedagem: Vercel (Edge Network).
 
 📱 Como Testar
 
-Acesse o link: [SEU_LINK_DA_VERCEL_AQUI]
+Acesse o link: restaurante-kisavita.vercel.app
 
 Cliente: Adicione uma pizza ao carrinho e finalize o pedido.
 
-Admin: Acesse /login.html (User: admin / Pass: 1234) para gerenciar o cardápio.
+Admin: Acesse /login.html (User: admin / Pass: kisavita2025) para gerenciar o cardápio.
 
 Desenvolvido por Isaque.
