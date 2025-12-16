@@ -46,7 +46,7 @@ Hospedagem: Vercel (Edge Network).
 
 📱 Como Testar
 
-Acesse o link: restaurante-kisavita.vercel.app
+Acesse o link: https://restaurante-kisavita.vercel.app
 
 Cliente: Adicione uma pizza ao carrinho e finalize o pedido.
 
