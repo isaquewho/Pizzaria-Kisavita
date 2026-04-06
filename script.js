@@ -302,12 +302,41 @@ window.abrirCarrinho = () => {
     renderModalCarrinho();
 };
 window.fecharCarrinho = () => document.getElementById('modalOverlayCarrinho').classList.remove('active');
+// ============================================================
+// WHATSAPP - NÚMERO DO RESTAURANTE (ALTERE AQUI)
+// ============================================================
+const WHATSAPP_NUMERO = "5511999999999"; // Formato: 55 + DDD + número (sem espaços ou traços)
+
 window.finalizarPedido = () => {
-    if(getCarrinho().length === 0) return showToast('Carrinho vazio!');
-    showToast('Pedido Enviado!');
+    const carrinho = getCarrinho();
+    if(carrinho.length === 0) return showToast('Carrinho vazio!');
+
+    // Monta a mensagem formatada
+    let mensagem = "🍕 *Olá! Gostaria de fazer um pedido na Casa de KisaVita:*\n\n";
+
+    let total = 0;
+    carrinho.forEach(item => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        mensagem += `• *${item.nome}*\n`;
+        mensagem += `  ${item.quantidade}x R$ ${parseFloat(item.preco).toFixed(2)} = R$ ${subtotal.toFixed(2)}\n\n`;
+    });
+
+    mensagem += `----------------------------\n`;
+    mensagem += `💰 *Total: R$ ${total.toFixed(2)}*\n\n`;
+    mensagem += `Aguardo a confirmação! 😊`;
+
+    const urlWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+
+    // Limpa o carrinho e abre o WhatsApp
     setCarrinho([]);
     fecharCarrinho();
     updateContador();
+    showToast('Redirecionando para o WhatsApp...');
+
+    setTimeout(() => {
+        window.open(urlWhatsApp, '_blank');
+    }, 800);
 };
 window.alterarQtd = (i, q) => {
     let c = getCarrinho();
