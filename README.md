@@ -50,6 +50,6 @@ Acesse o link: https://restaurante-kisavita.vercel.app
 
 Cliente: Adicione uma pizza ao carrinho e finalize o pedido.
 
-Admin: Acesse /login.html (User: admin / Pass: kisavita2025) para gerenciar o cardápio.
+Admin: o painel fica em /login.html (acesso restrito ao dono da pizzaria).
 
 Desenvolvido por Isaque.
